@@ -10,6 +10,13 @@ class SubidaArchivosController extends Controller
     //
     public function getView()
     {
-      return view('flujos.contratar');
+      return view('flujos.subirfichero');
+    }
+
+    /**
+    * Envia el fichero
+    */
+    public function enviarFichero(Request $request) {
+    	
     }
 }

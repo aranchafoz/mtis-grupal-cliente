@@ -13,11 +13,12 @@
 
 Route::get('/', function () {
     return view('flujos.contratar');
-});
+})->name('home');
 
 Route::get('/contratar', 'ContratarController@getView')->name('contratar');
 
 Route::get('/subida', 'SubidaArchivosController@getView')->name('subida');
+Route::post('/subida', 'SubidaArchivosController@enviarFichero')->name('subir_fichero');
 
 Route::get('/qasoftware', 'QASoftwareController@getView')->name('qasoftware');
 
