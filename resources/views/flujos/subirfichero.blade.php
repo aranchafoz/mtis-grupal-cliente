@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="container-fluid">
+        @if (isset($upload)) 
+            @if ($upload == true)
+            <div class="alert alert-success">
+                ¡Fichero enviado correctamente!
+            </div>
+            @else
+            <div class="alert alert-warning">
+                Error al enviar el fichero - <strong>Error: </strong> {{$error}}
+            </div>
+            @endif
+        @endif
+
         {!! Form::open(['action' => 'SubidaArchivosController@enviarFichero', 'method' => 'POST']) !!}
         {!! Form::token() !!}
         <div class="row">
