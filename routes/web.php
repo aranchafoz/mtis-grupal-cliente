@@ -25,6 +25,8 @@ Route::get('/qasoftwareInformes', 'QASoftwareController@verInformes')->name('qas
 Route::post('/qasoftware', 'QASoftwareController@enviarPeticion')->name('qasoftware_peticion');
 
 Route::get('/manufactura', 'ManufacturaController@getView')->name('manufactura');
+Route::get('/materiales', 'ManufacturaController@getMaterialesAndPedidos')->name('materiales');
+Route::post('/manufactura/{id}', 'ManufacturaController@actualizarPedido')->name('actualizar-pedido');
 
 Route::get('/ecommerce', 'ECommerceController@getView')->name('ecommerce');
 
