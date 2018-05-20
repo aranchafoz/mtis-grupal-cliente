@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px !important;
+}
+
+
+.nav-pills>li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+
+.nav-pills>li>a {
+    color: #1f77d0;
+}

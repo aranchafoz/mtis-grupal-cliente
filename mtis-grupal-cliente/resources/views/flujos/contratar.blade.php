@@ -123,7 +123,6 @@
                                 <th>Título</th>
                                 <th>Descripción</th>
                                 <th>Requisitos mínimos</th>
-                                <th>Publicar</th>
                               </thead>
                               <tbody>
                                   <tr>
@@ -132,11 +131,6 @@
                                     <td>$36,738</td>
                                     <td>Niger</td>
                                     <td>Oud-Turnhout</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>2</td>
@@ -144,11 +138,6 @@
                                     <td>$23,789</td>
                                     <td>Curaçao</td>
                                     <td>Sinaai-Waas</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>3</td>
@@ -156,11 +145,6 @@
                                     <td>$56,142</td>
                                     <td>Netherlands</td>
                                     <td>Baileux</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>4</td>
@@ -168,11 +152,6 @@
                                     <td>$38,735</td>
                                     <td>Korea, South</td>
                                     <td>Overland Park</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>5</td>
@@ -180,11 +159,6 @@
                                     <td>$63,542</td>
                                     <td>Malawi</td>
                                     <td>Feldkirchen in Kärnten</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>6</td>
@@ -192,11 +166,6 @@
                                     <td>$78,615</td>
                                     <td>Chile</td>
                                     <td>Gloucester</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                               </tbody>
                           </table>
@@ -215,14 +184,10 @@
                           <table class="table table-hover table-striped">
                               <thead>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Nacimiento</th>
-                                <th>Localización</th>
-                                <th>Habilidades</th>
-                                <th>Oferta</th>
-                                <th>Via</th>
-                                <th>Evaluar</th>
+                                <th>Categoría</th>
+                                <th>Título</th>
+                                <th>Descripción</th>
+                                <th>Requisitos mínimos</th>
                               </thead>
                               <tbody>
                                   <tr>
@@ -231,21 +196,6 @@
                                     <td>$36,738</td>
                                     <td>Niger</td>
                                     <td>Oud-Turnhout</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>
-                                      <button class="btn-link" type="button" data-toggle="modal" data-target="#evaluarModal">
-                                        <i class="pe-7s-note"></i>
-                                      </button>
-                                      @component('flujos.modal-contratar-evaluar')
-                                      @endcomponent
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>2</td>
@@ -253,19 +203,34 @@
                                     <td>$23,789</td>
                                     <td>Curaçao</td>
                                     <td>Sinaai-Waas</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-note"></i>
-                                      </button>
-                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Sage Rodriguez</td>
+                                    <td>$56,142</td>
+                                    <td>Netherlands</td>
+                                    <td>Baileux</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Philip Chaney</td>
+                                    <td>$38,735</td>
+                                    <td>Korea, South</td>
+                                    <td>Overland Park</td>
+                                  </tr>
+                                  <tr>
+                                    <td>5</td>
+                                    <td>Doris Greene</td>
+                                    <td>$63,542</td>
+                                    <td>Malawi</td>
+                                    <td>Feldkirchen in Kärnten</td>
+                                  </tr>
+                                  <tr>
+                                    <td>6</td>
+                                    <td>Mason Porter</td>
+                                    <td>$78,615</td>
+                                    <td>Chile</td>
+                                    <td>Gloucester</td>
                                   </tr>
                               </tbody>
                           </table>
@@ -284,15 +249,10 @@
                           <table class="table table-hover table-striped">
                               <thead>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Nacimiento</th>
-                                <th>Localización</th>
-                                <th>Habilidades</th>
-                                <th>Oferta</th>
-                                <th>Nota</th>
-                                <th>Comentarios</th>
-                                <th><center>Contratar</center></th>
+                                <th>Categoría</th>
+                                <th>Título</th>
+                                <th>Descripción</th>
+                                <th>Requisitos mínimos</th>
                               </thead>
                               <tbody>
                                   <tr>
@@ -301,20 +261,6 @@
                                     <td>$36,738</td>
                                     <td>Niger</td>
                                     <td>Oud-Turnhout</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>2</td>
@@ -322,20 +268,6 @@
                                     <td>$23,789</td>
                                     <td>Curaçao</td>
                                     <td>Sinaai-Waas</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>3</td>
@@ -343,20 +275,6 @@
                                     <td>$56,142</td>
                                     <td>Netherlands</td>
                                     <td>Baileux</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>4</td>
@@ -364,20 +282,6 @@
                                     <td>$38,735</td>
                                     <td>Korea, South</td>
                                     <td>Overland Park</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>5</td>
@@ -385,20 +289,6 @@
                                     <td>$63,542</td>
                                     <td>Malawi</td>
                                     <td>Feldkirchen in Kärnten</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>6</td>
@@ -406,20 +296,6 @@
                                     <td>$78,615</td>
                                     <td>Chile</td>
                                     <td>Gloucester</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
                                   </tr>
                               </tbody>
                           </table>
@@ -438,27 +314,18 @@
                           <table class="table table-hover table-striped">
                               <thead>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Nacimiento</th>
-                                <th>Localización</th>
-                                <th>Puesto</th>
-                                <th>Habilidades</th>
+                                <th>Categoría</th>
+                                <th>Título</th>
+                                <th>Descripción</th>
+                                <th>Requisitos mínimos</th>
                               </thead>
                               <tbody>
                                   <tr>
                                     <td>1</td>
-                                    <td>Jaume</td>
-                                    <td>Moreno Cantó</td>
-                                    <td>1995-04-16</td>
-                                    <td>Sella, Alicante, Spain</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
+                                    <td>Dakota Rice</td>
+                                    <td>$36,738</td>
+                                    <td>Niger</td>
+                                    <td>Oud-Turnhout</td>
                                   </tr>
                                   <tr>
                                     <td>2</td>
@@ -466,13 +333,6 @@
                                     <td>$23,789</td>
                                     <td>Curaçao</td>
                                     <td>Sinaai-Waas</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>3</td>
@@ -480,13 +340,6 @@
                                     <td>$56,142</td>
                                     <td>Netherlands</td>
                                     <td>Baileux</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>4</td>
@@ -494,13 +347,6 @@
                                     <td>$38,735</td>
                                     <td>Korea, South</td>
                                     <td>Overland Park</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>5</td>
@@ -508,13 +354,6 @@
                                     <td>$63,542</td>
                                     <td>Malawi</td>
                                     <td>Feldkirchen in Kärnten</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
                                   </tr>
                                   <tr>
                                     <td>6</td>
@@ -522,13 +361,6 @@
                                     <td>$78,615</td>
                                     <td>Chile</td>
                                     <td>Gloucester</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
                                   </tr>
                               </tbody>
                           </table>
