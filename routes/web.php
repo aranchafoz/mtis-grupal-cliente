@@ -21,6 +21,8 @@ Route::get('/subida', 'SubidaArchivosController@getView')->name('subida');
 Route::post('/subida', 'SubidaArchivosController@enviarFichero')->name('subir_fichero');
 
 Route::get('/qasoftware', 'QASoftwareController@getView')->name('qasoftware');
+Route::get('/qasoftwareInformes', 'QASoftwareController@verInformes')->name('qasoftware_verInformes');
+Route::post('/qasoftware', 'QASoftwareController@enviarPeticion')->name('qasoftware_peticion');
 
 Route::get('/manufactura', 'ManufacturaController@getView')->name('manufactura');
 

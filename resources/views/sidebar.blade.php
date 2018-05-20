@@ -25,6 +25,14 @@
                     <p>QA Software Apps</p>
                 </a>
             </li>
+
+            <li {{request()->is('qasoftware_verInformes') ? 'class=active' : ''}}>
+                <a href="{{ route("qasoftware_verInformes") }}">
+                    <i class="pe-7s-news-paper"></i>
+                    <p>Informes QA</p>
+                </a>
+            </li>
+
             <li>
               <p class="logo">Paneles y placas</p>
             </li>
