@@ -23,6 +23,9 @@
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ url("css/demo.css") }}" rel="stylesheet" />
+		
+    <!-- Sub-views Styles -->
+    @yield('styles')
 
 
     <!--     Fonts and icons     -->

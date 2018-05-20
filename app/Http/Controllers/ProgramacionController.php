@@ -12,4 +12,5 @@ class ProgramacionController extends Controller
     {
       return view('flujos.contratar');
     }
+
 }
