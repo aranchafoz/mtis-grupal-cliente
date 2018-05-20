@@ -27,3 +27,4 @@ Route::get('/manufactura', 'ManufacturaController@getView')->name('manufactura')
 Route::get('/ecommerce', 'ECommerceController@getView')->name('ecommerce');
 
 Route::get('/programacion', 'ProgramacionController@getView')->name('programacion');
+Route::post('/programacion', 'ProgramacionController@movePanel')->name('move_panel');
