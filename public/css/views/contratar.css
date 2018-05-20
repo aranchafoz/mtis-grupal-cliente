@@ -14,3 +14,29 @@
 .nav-pills>li>a {
     color: #1f77d0;
 }
+
+.skills-list {
+    padding-left: 20px !important;
+}
+
+.skills-list>li {
+  font-size: 14px;
+}
+
+.btn-success>i, .btn-link>i {
+  font-size: 20px;
+}
+
+.btn-link>.pe-7s-cloud-upload {
+  font-weight: 600;
+}
+
+.btn-success {
+  display: flex !important;
+  margin: 0 auto !important;
+  padding: 8px 10px !important;
+}
+
+.modal-backdrop {
+  display: none !important;
+}
