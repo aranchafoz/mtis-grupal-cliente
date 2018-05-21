@@ -1,4 +1,5 @@
 <div class="modal fade" id="evaluarModal{{ $solicitante->id }}" tabindex="-1" role="dialog" aria-labelledby="evaluarModalLabel" aria-hidden="true"  data-backdrop="false">
+  {!! Form::open(['action' => ['ContratarController@evaluarPerfil', $solicitante->id], 'method' => 'post']) !!}
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="display: flex;">
@@ -8,7 +9,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      {!! Form::open(['action' => ['ContratarController@evaluarPerfil', $solicitante->id], 'method' => 'post']) !!}
+
       {!! Form::token() !!}
       <div class="modal-body">
         <form>
@@ -24,10 +25,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <!-- <button type="button" class="btn btn-primary">Evaluar</button> -->
         {{ Form::submit('Evaluar',['class' => 'btn btn-primary']) }}
       </div>
-      {!! Form::close() !!}
+
     </div>
   </div>
+  {!! Form::close() !!}
 </div>

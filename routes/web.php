@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('flujos.contratar');
+    return redirect()->route('contratar');
 })->name('home');
 
 Route::get('/contratar', 'ContratarController@getView')->name('contratar');

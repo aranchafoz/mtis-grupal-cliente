@@ -5,6 +5,17 @@
 
 @section('content')
     <div class="container-fluid">
+        @if (isset($alert))
+            @if ($alert['ok'] == true)
+            <div class="alert alert-success">
+                {{ $alert['message'] }}
+            </div>
+            @else
+            <div class="alert alert-warning">
+                <strong>Error: </strong> {{ $alert['message'] }}
+            </div>
+            @endif
+        @endif
 
         <div class="row">
           <div class="col-sm-12" style="margin-bottom: 30px">
@@ -21,7 +32,7 @@
                           <h4 class="title">Crear una Oferta de Trabajo</h4>
                       </div>
                       <div class="content">
-                          <form>
+                          {!! Form::open(['action' => ['ContratarController@crearOferta'], 'method' => 'post']) !!}
                               <div class="row">
                                   <div class="col-md-4">
                                       <div class="form-group">
@@ -84,7 +95,7 @@
 
                               <button type="submit" class="btn btn-success btn-fill pull-right">Create</button>
                               <div class="clearfix"></div>
-                          </form>
+                          {!! Form::close() !!}
                       </div>
                   </div>
               </div>
@@ -127,24 +138,30 @@
                               </thead>
                               <tbody>
                                 @foreach($ofertas as $oferta)
-                                  <tr>
-                                    <td>{{ $oferta->id }}</td>
-                                    <td>{{ $oferta->category }}</td>
-                                    <td>{{ $oferta->title }}</td>
-                                    <td>{{ $oferta->description }}</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        @foreach($oferta->minimumRequirements as $key => $value)
-                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
-                                        @endforeach
-                                      </ul>
-                                    </td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                                  {!! Form::open(['action' => ['ContratarController@publicarOferta', $oferta->id], 'method' => 'post']) !!}
+                                    <tr>
+                                      <td>{{ $oferta->id }}</td>
+                                      <td>{{ $oferta->category }}</td>
+                                      <td>{{ $oferta->title }}</td>
+                                      <td>{{ $oferta->description }}</td>
+                                      <td>
+                                        <ul class="skills-list">
+                                          @foreach($oferta->minimumRequirements as $key => $value)
+                                            <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                          @endforeach
+                                        </ul>
+                                      </td>
+                                      <td>
+                                        @if($oferta->published)
+                                          <small><i>Publicada</i></small>
+                                        @else
+                                          <button class="btn-link" type="submit">
+                                            <i class="pe-7s-cloud-upload"></i>
+                                          </button>
+                                        @endif
+                                      </td>
+                                    </tr>
+                                  {!! Form::close() !!}
                                 @endforeach
                               </tbody>
                           </table>
@@ -227,28 +244,30 @@
                               </thead>
                               <tbody>
                                 @foreach($candidatos as $candidato)
-                                  <tr>
-                                    <td>{{ $candidato->id }}</td>
-                                    <td>{{ $candidato->name }}</td>
-                                    <td>{{ $candidato->surnames }}</td>
-                                    <td>{{ date('d-m-Y', strtotime($candidato->birthdate)) }}</td>
-                                    <td>{{ $candidato->location }}</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        @foreach($candidato->habilities as $key => $value)
-                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
-                                        @endforeach
-                                      </ul>
-                                    </td>
-                                    <td>{{ $candidato->apliedJob }}</td>
-                                    <td>{{ $candidato->aplicationMark }}</td>
-                                    <td><small>{{ $candidato->aplicationComments }}</small></td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                                  {!! Form::open(['action' => ['ContratarController@contratarPerfil', $candidato->id], 'method' => 'post']) !!}
+                                    <tr>
+                                      <td>{{ $candidato->id }}</td>
+                                      <td>{{ $candidato->name }}</td>
+                                      <td>{{ $candidato->surnames }}</td>
+                                      <td>{{ date('d-m-Y', strtotime($candidato->birthdate)) }}</td>
+                                      <td>{{ $candidato->location }}</td>
+                                      <td>
+                                        <ul class="skills-list">
+                                          @foreach($candidato->habilities as $key => $value)
+                                            <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                          @endforeach
+                                        </ul>
+                                      </td>
+                                      <td>{{ $candidato->apliedJob }}</td>
+                                      <td>{{ $candidato->aplicationMark }}</td>
+                                      <td><small>{{ $candidato->aplicationComments }}</small></td>
+                                      <td>
+                                        <button class="btn btn-success btn-fill" type="submit">
+                                          <i class="pe-7s-mail-open-file"></i>
+                                        </button>
+                                      </td>
+                                    </tr>
+                                  {!! Form::close() !!}
                                 @endforeach
                               </tbody>
                           </table>
