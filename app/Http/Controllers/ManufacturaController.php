@@ -13,12 +13,13 @@ class ManufacturaController extends Controller
     public function getView()
     {
     	$client = new Client();
-    	$requestUrl = $this->base_uri.'fabricacionPaneles/pedidos';
+    	$requestUrl = $this->base_uri.'fabricacionPaneles/pedidos/estado/Nuevo';
     	$paneles = null;
 
     	try {
     		$result = $client->get($requestUrl);
     		$paneles = json_decode($result->getBody()->getContents());
+
 
     	} catch (GuzzleException $e) {
 	    	$jsonValues = json_decode($e->getResponse()->getBody(true));
@@ -67,11 +68,12 @@ class ManufacturaController extends Controller
     * @param $id del pedido
     */
     public function actualizarPedido(Request $request, $id) {
+
     	$client = new Client();
     	$requestUrl = $this->base_uri."fabricacionPaneles/pedidos/$id/siguienteEstado";
 
     	try {
-	    	$result = $client->post($this->base_uri);
+	    	$result = $client->get($this->base_uri);
 
 	    } catch (GuzzleException $e) {
 	    	abort(500);

@@ -48,7 +48,7 @@ class ProgramacionController extends Controller
 
 	    $arrayJson = get_object_vars($jsonValues->MoverPanelSolarOrquestadorResponse);
 	    $result = get_object_vars($arrayJson['tns:result']);
-	
+
 	   	$moved = $result["@xmlns:xmlns"];
 
 

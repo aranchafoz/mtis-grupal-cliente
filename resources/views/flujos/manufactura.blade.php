@@ -24,7 +24,7 @@
                         <td>{{$panel->estado}}</td>
                         <td>{{$panel->cliente}}</td>
                         <td>
-                            {!! Form::open(['action' => ['ProgramacionController@movePanel', 'id' => $panel->id], 'method' => 'POST']) !!}
+                            {!! Form::open(['action' => ['ManufacturaController@actualizarPedido', $panel->id], 'method' => 'POST']) !!}
                             {!! Form::token() !!}
                                 {{ Form::submit('Actualizar pedido', ['class' => 'btn btn-success btn-fill']) }}
                             {!! Form::close() !!}
