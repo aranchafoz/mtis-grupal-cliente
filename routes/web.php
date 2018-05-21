@@ -16,6 +16,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/contratar', 'ContratarController@getView')->name('contratar');
+Route::post('/contratar/oferta', 'ContratarController@crearOferta')->name('crear_oferta');
+Route::post('/contratar/oferta/{id}/publicar', 'ContratarController@publicarOferta')->name('publicar_oferta');
+Route::post('/contratar/solicitante/{id}/evaluar', 'ContratarController@evaluarPerfil')->name('evaluar_perfil');
+Route::post('/contratar/trabajador/{id}/contratar', 'ContratarController@contratarPerfil')->name('contratar_perfil');
 
 Route::get('/subida', 'SubidaArchivosController@getView')->name('subida');
 Route::post('/subida', 'SubidaArchivosController@enviarFichero')->name('subir_fichero');

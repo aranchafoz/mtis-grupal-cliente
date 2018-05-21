@@ -126,78 +126,26 @@
                                 <th>Publicar</th>
                               </thead>
                               <tbody>
+                                @foreach($ofertas as $oferta)
                                   <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
+                                    <td>{{ $oferta->id }}</td>
+                                    <td>{{ $oferta->category }}</td>
+                                    <td>{{ $oferta->title }}</td>
+                                    <td>{{ $oferta->description }}</td>
+                                    <td>
+                                      <ul class="skills-list">
+                                        @foreach($oferta->minimumRequirements as $key => $value)
+                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                        @endforeach
+                                      </ul>
+                                    </td>
                                     <td>
                                       <button class="btn-link" type="button">
                                         <i class="pe-7s-cloud-upload"></i>
                                       </button>
                                     </td>
                                   </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-cloud-upload"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                                @endforeach
                               </tbody>
                           </table>
                       </div>
@@ -225,48 +173,31 @@
                                 <th>Evaluar</th>
                               </thead>
                               <tbody>
+                                @foreach($solicitantes as $solicitante)
                                   <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
+                                    <td>{{ $solicitante->id }}</td>
+                                    <td>{{ $solicitante->name }}</td>
+                                    <td>{{ $solicitante->surnames }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($solicitante->birthdate)) }}</td>
+                                    <td>{{ $solicitante->location }}</td>
                                     <td>
                                       <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
+                                        @foreach($solicitante->habilities as $key => $value)
+                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                        @endforeach
                                       </ul>
                                     </td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
+                                    <td>{{ $solicitante->apliedJob }}</td>
+                                    <td>{{ $solicitante->via }}</td>
                                     <td>
-                                      <button class="btn-link" type="button" data-toggle="modal" data-target="#evaluarModal">
+                                      <button class="btn-link" type="button" data-toggle="modal" data-target="#evaluarModal{{ $solicitante->id }}">
                                         <i class="pe-7s-note"></i>
                                       </button>
-                                      @component('flujos.modal-contratar-evaluar')
+                                      @component('flujos.modal-contratar-evaluar', ['solicitante' => $solicitante])
                                       @endcomponent
                                     </td>
                                   </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>
-                                      <button class="btn-link" type="button">
-                                        <i class="pe-7s-note"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                                @endforeach
                               </tbody>
                           </table>
                       </div>
@@ -295,132 +226,30 @@
                                 <th><center>Contratar</center></th>
                               </thead>
                               <tbody>
+                                @foreach($candidatos as $candidato)
                                   <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
+                                    <td>{{ $candidato->id }}</td>
+                                    <td>{{ $candidato->name }}</td>
+                                    <td>{{ $candidato->surnames }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($candidato->birthdate)) }}</td>
+                                    <td>{{ $candidato->location }}</td>
                                     <td>
                                       <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
+                                        @foreach($candidato->habilities as $key => $value)
+                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                        @endforeach
                                       </ul>
                                     </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
+                                    <td>{{ $candidato->apliedJob }}</td>
+                                    <td>{{ $candidato->aplicationMark }}</td>
+                                    <td><small>{{ $candidato->aplicationComments }}</small></td>
                                     <td>
                                       <button class="btn btn-success btn-fill" type="button">
                                         <i class="pe-7s-mail-open-file"></i>
                                       </button>
                                     </td>
                                   </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Dakota Rice</li>
-                                        <li>Dakota Rice</li>
-                                      </ul>
-                                    </td>
-                                    <td>$36,738</td>
-                                    <td>8</td>
-                                    <td>Gran carro</td>
-                                    <td>
-                                      <button class="btn btn-success btn-fill" type="button">
-                                        <i class="pe-7s-mail-open-file"></i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                                @endforeach
                               </tbody>
                           </table>
                       </div>
@@ -446,90 +275,23 @@
                                 <th>Habilidades</th>
                               </thead>
                               <tbody>
+                                @foreach($trabajadores as $trabajador)
                                   <tr>
-                                    <td>1</td>
-                                    <td>Jaume</td>
-                                    <td>Moreno Cantó</td>
-                                    <td>1995-04-16</td>
-                                    <td>Sella, Alicante, Spain</td>
-                                    <td>Amo y señor de Laravel</td>
+                                    <td>{{ $trabajador->id }}</td>
+                                    <td>{{ $trabajador->name }}</td>
+                                    <td>{{ $trabajador->surnames }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($trabajador->birthdate)) }}</td>
+                                    <td>{{ $trabajador->location }}</td>
+                                    <td>{{ $trabajador->job }}</td>
                                     <td>
                                       <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
+                                        @foreach($trabajador->habilities as $key => $value)
+                                          <li>{{ $key }}:&nbsp;{{ $value }}</li>
+                                        @endforeach
                                       </ul>
                                     </td>
                                   </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td>Amo y señor de Laravel</td>
-                                    <td>
-                                      <ul class="skills-list">
-                                        <li>Laravel: 10</li>
-                                        <li>JQuery: 6</li>
-                                      </ul>
-                                    </td>
-                                  </tr>
+                                @endforeach
                               </tbody>
                           </table>
                       </div>
