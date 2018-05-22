@@ -82,13 +82,26 @@ class ECommerceController extends Controller
 	    		'headers' => $headers,
 	    		'json' => $data
 	    	]);
+			$jsonValues = json_decode($result->getBody()->getContents());
 
-	    	$jsonValues = json_decode($result->getBody()->getContents());
-			$comprado=true;
+			if($jsonValues->panelesEncargados == 0){
+				$comprado=true;
+			}else{
+				$clienteDragonBestiaZ = new Client();
+				$comprado=false;
+				$error = "Productos insuficientes,".$jsonValues->panelesEncargados." encargados al proveedor";
+				$datos = array("estado" => "Nuevo", "panelesEncargados" => $jsonValues->panelesEncargados, "cliente" => $idCliente);
+				$resultado = $clienteDragonBestiaZ->post('localhost:3000/fabricacionPaneles/pedidos', [
+					'json' => $datos
+				]);
+
+				$json = json_decode($resultado->getBody()->getContents());
+			}
 	    } catch (GuzzleException $e) {
+	
 	    	$jsonValues = json_decode($e->getResponse()->getBody(true));
-
-	    	if ($jsonValues->status == "400") {
+			dd($jsonValues);
+	    	if ($jsonValues->error) {
 	    		$generado = false;
 	    		$error = $jsonValues->error;
 

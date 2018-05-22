@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container-fluid">
-        @if (isset($upload)) 
-            @if ($upload == true)
+        @if (isset($comprado)) 
+            @if ($comprado == true)
             <div class="alert alert-success">
-                ¡Fichero enviado correctamente!
+                ¡Producto comprado correctamente!
             </div>
             @else
             <div class="alert alert-warning">
-                Error al enviar el fichero - <strong>Error: </strong> {{$error}}
+                Error al comprar el producto - <strong>Error: </strong> {{$error}}
             </div>
             @endif
         @endif
