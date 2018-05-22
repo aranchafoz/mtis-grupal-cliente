@@ -13,7 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 
 class ContratarController extends Controller
 {
-    protected $base_uri = 'http://localhost:3001/';
+    protected $base_uri = 'http://localhost:9090/contratar/';
 
     function getData() {
       $ofertas = [];

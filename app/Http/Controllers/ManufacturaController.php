@@ -13,7 +13,7 @@ class ManufacturaController extends Controller
     public function getView()
     {
     	$client = new Client();
-    	$requestUrl = $this->base_uri.'fabricacionPaneles/pedidos/estado/Nuevo';
+    	$requestUrl = $this->base_uri.'fabricacionPaneles/pedidos';
     	$paneles = null;
 
     	try {
@@ -73,7 +73,7 @@ class ManufacturaController extends Controller
     	$requestUrl = $this->base_uri."fabricacionPaneles/pedidos/$id/siguienteEstado";
 
     	try {
-	    	$result = $client->get($this->base_uri);
+	    	$result = $client->get($requestUrl);
 
 	    } catch (GuzzleException $e) {
 	    	abort(500);
