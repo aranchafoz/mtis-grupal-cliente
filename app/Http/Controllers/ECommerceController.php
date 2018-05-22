@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 
 class ECommerceController extends Controller
 {
-    protected $base_uri = 'http://localhost:3002/ecommerce';
+    protected $base_uri = 'http://localhost:9090/ecommerce';
     //
     public function getView()
     {
@@ -91,7 +91,7 @@ class ECommerceController extends Controller
 				$comprado=false;
 				$error = "Productos insuficientes,".$jsonValues->panelesEncargados." encargados al proveedor";
 				$datos = array("estado" => "Nuevo", "panelesEncargados" => $jsonValues->panelesEncargados, "cliente" => $idCliente);
-				$resultado = $clienteDragonBestiaZ->post('localhost:3000/fabricacionPaneles/pedidos', [
+				$resultado = $clienteDragonBestiaZ->post('localhost:9090/fabricacionPaneles/pedidos', [
 					'json' => $datos
 				]);
 
