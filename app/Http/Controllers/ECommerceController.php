@@ -112,5 +112,31 @@ class ECommerceController extends Controller
 	    	}
 	    }
 	    return view('flujos.comprar', compact('comprado', 'error'));
-    }
+	}
+
+	public function borrarFactura(Request $request, $id)
+    {
+		$client = new Client();
+		$requestUrl = $this->base_uri.'/factura/'.$id;
+		$headers = [
+			'Content-Type' => 'application/json',
+		  ];
+    	try {
+			$result = $client->delete($requestUrl, [
+	    		'headers' => $headers
+			]);
+			$jsonValues = json_decode($result->getBody()->getContents());
+			
+    	} catch (GuzzleException $e) {
+	    	$jsonValues = json_decode($e->getResponse()->getBody(true));
+	    	if ($jsonValues->status == "400") {
+	    		$error = $jsonValues->error;
+
+	    	} else  if ($jsonValues->status == "500") {
+	    		$error = "Error en el servidor";
+	    		$response = $jsonValues->data;
+			}
+		}
+		return $this->getFacturas();
+	}
 }

@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-md-6">
                 {{ Form::submit('Comprar', ['class' => 'btn btn-success btn-fill']) }}
-                <a href="{{ route('home') }}" class="btn btn-fill btn-info">Cancelar</a>
+                <a href="{{ route('ecommerce') }}" class="btn btn-fill btn-info">Cancelar</a>
             </div>
         </div>
         {!! Form::close() !!}

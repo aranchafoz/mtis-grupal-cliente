@@ -36,6 +36,7 @@ Route::get('/ecommerce', 'ECommerceController@getView')->name('ecommerce');
 Route::get('/ecommerce/facturas', 'ECommerceController@getFacturas')->name('facturas');
 Route::get('/ecommerce/comprar', 'ECommerceController@getViewCompra')->name('comprar');
 Route::post('/ecommerce/comprar', 'ECommerceController@comprarProducto')->name('comprar_producto');
+Route::delete('/ecommerce/facturas/{id}', 'ECommerceController@borrarFactura')->name('borrar_factura');
 
 Route::get('/programacion', 'ProgramacionController@getView')->name('programacion');
 Route::post('/programacion', 'ProgramacionController@movePanel')->name('move_panel');

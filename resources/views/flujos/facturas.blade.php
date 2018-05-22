@@ -16,13 +16,16 @@
                     <th>Opciones</th>
                 </thead>
                 <tbody>
-                    @foreach($facturas as $facturas)
+                    @foreach($facturas as $factura)
                     <tr>
-                        <td>{{$facturas->idProducto}}</td>
-                        <td>{{$facturas->idCliente}}</td>
-                        <td>{{$facturas->Cantidad}}</td>
+                        <td>{{$factura->idProducto}}</td>
+                        <td>{{$factura->idCliente}}</td>
+                        <td>{{$factura->Cantidad}}</td>
                         <td>
-                           <a href="">Borrar</a>
+                        {!! Form::open(['action' => ['ECommerceController@borrarFactura',$factura->id], 'method' => 'DELETE']) !!}
+                        {!! Form::token() !!}
+                        {{ Form::submit('Borrar', ['class' => 'btn btn-success btn-fill']) }}
+                        {!! Form::token() !!}
                         </td>
                     </tr>
                     @endforeach
